@@ -4,7 +4,8 @@
   "description": "Testing the lib",
   "type": "module",
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "prepublishOnly": "npm run rollup"
   },
   "repository": {
     "type": "git",
