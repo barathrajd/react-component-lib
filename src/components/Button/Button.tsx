@@ -1,7 +1,12 @@
+interface ButtonProps {
+  label :string
+  color : "primary" | "secondary"
+}
+
 import React from "react";
 import styled from "@emotion/styled";
 
-const Button = styled.button`
+const BaseButton = styled.button`
   display-inline: flex;
   aliginitems: center;
   justifycontent: center;
@@ -9,8 +14,7 @@ const Button = styled.button`
   margin: 10px;
 `;
 
-const PrimaryButton = () => {
-  return <Button color="#e4e4e4">Hello World</Button>;
+export const Button = (props : ButtonProps) => {
+  return <BaseButton color={props.color}>{props.label}</BaseButton>;
 };
 
-export default PrimaryButton;

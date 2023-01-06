@@ -1,22 +1,11 @@
 {
-  "name": "react-component-lib",
-  "version": "0.0.1",
-  "description": "Testing the lib",
+  "name": "@barathrajd/react-component-lib",
   "type": "module",
-  "scripts": {
-    "rollup": "rollup -c",
-    "prepublishOnly": "npm run rollup"
+  "version": "1.0.1",
+  "description": "Testing the lib",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/barathrajd"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/barathraj-affinsys/react-component-lib.git"
-  },
-  "author": "barathraj",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/barathraj-affinsys/react-component-lib/issues"
-  },
-  "homepage": "https://github.com/barathraj-affinsys/react-component-lib#readme",
   "devDependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -33,14 +22,31 @@
     "rollup-plugin-dts": "^5.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.1",
     "typescript": "^4.9.4"
   },
+  "scripts": {
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barathrajd/react-component-lib.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barathrajd/react-component-lib/issues"
+  },
+  "homepage": "https://github.com/barathrajd/react-component-lib#readme",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@rollup/plugin-terser": "^0.2.1"
+  }
 }

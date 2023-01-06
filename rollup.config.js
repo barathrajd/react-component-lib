@@ -5,8 +5,7 @@ import dts from "rollup-plugin-dts";
 
 // To handle css files
 import postcss from "rollup-plugin-postcss";
-
-import { terser } from "rollup-plugin-terser";
+import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import image from "@rollup/plugin-image";
 
@@ -31,7 +30,6 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(),
-
       terser(),
       image(),
     ],
@@ -40,7 +38,5 @@ export default [
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-
-    external: [/\.css$/], // telling rollup anything that is .css aren't part of type exports
   },
 ];
