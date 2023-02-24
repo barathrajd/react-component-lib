@@ -1,20 +1,40 @@
-interface ButtonProps {
-  label :string
-  color : "primary" | "secondary"
+import React from "react";
+
+interface Props {
+  border: string;
+  color: string;
+  children?: React.ReactNode;
+  height: string;
+  onClick: () => void;
+  radius: string
+  width: string;
 }
 
-import React from "react";
-import styled from "@emotion/styled";
+const Button: React.FC<Props> = ({ 
+    border,
+    color,
+    children,
+    height,
+    onClick, 
+    radius,
+    width
+  }) => { 
+  return (
+    <button 
+      onClick={onClick}
+      style={{
+         backgroundColor: color,
+         border,
+         borderRadius: radius,
+         height,
+         width
+      }}
+    >
+    {children}
+    </button>
+  );
+}
 
-const BaseButton = styled.button`
-  display-inline: flex;
-  aliginitems: center;
-  justifycontent: center;
-  padding: 8px 16px;
-  margin: 10px;
-`;
+export default Button;
 
-export const Button = (props : ButtonProps) => {
-  return <BaseButton color={props.color}>{props.label}</BaseButton>;
-};
 
